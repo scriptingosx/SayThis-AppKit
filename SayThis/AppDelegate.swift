@@ -26,8 +26,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let path = "/usr/bin/say"
         let arguments = ["hello world"]
         
+        sender.enabled = false
+        
         let task = NSTask.launchedTaskWithLaunchPath(path, arguments: arguments)
         task.waitUntilExit()
+        
+        sender.enabled = true
     }
 
 }
