@@ -51,8 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				C6EAA3E81CCA645A0012AC6F /* AppDelegate.swift */,
-				C6EAA3EA1CCA645A0012AC6F /* Assets.xcassets */,
 				C6EAA3EC1CCA645A0012AC6F /* MainMenu.xib */,
+				C6EAA3EA1CCA645A0012AC6F /* Assets.xcassets */,
 				C6EAA3EF1CCA645A0012AC6F /* Info.plist */,
 			);
 			path = SayThis;
