@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var sayThisTextField: NSTextField!
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -24,7 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func talk(sender: NSButton) {
         let path = "/usr/bin/say"
-        let arguments = ["hello world"]
+        let textToSay = sayThisTextField.stringValue
+        let arguments = [textToSay]
         
         sender.enabled = false
         
