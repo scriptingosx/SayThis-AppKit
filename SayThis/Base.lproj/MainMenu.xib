@@ -697,6 +697,7 @@
                     </textField>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="327" y="240"/>
         </window>
     </objects>
 </document>
