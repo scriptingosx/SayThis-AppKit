@@ -671,14 +671,16 @@
         <window title="SayThis" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="120" y="820" width="480" height="62"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <value key="minSize" type="size" width="240" height="62"/>
+            <value key="maxSize" type="size" width="1000" height="62"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-8H-ZHk">
-                        <rect key="frame" x="401" y="312" width="65" height="32"/>
+                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-8H-ZHk">
+                        <rect key="frame" x="401" y="14" width="65" height="32"/>
                         <buttonCell key="cell" type="push" title="Talk" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KJL-5u-ZSS">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -687,8 +689,8 @@
                             <action selector="talk:" target="Voe-Tx-rLC" id="u2f-U0-ODP"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mtv-mM-yBl">
-                        <rect key="frame" x="20" y="318" width="379" height="22"/>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mtv-mM-yBl">
+                        <rect key="frame" x="20" y="20" width="379" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="icP-ZM-ghg">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -696,8 +698,14 @@
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Nsb-8H-ZHk" secondAttribute="trailing" constant="20" symbolic="YES" id="8kS-IC-fn2"/>
+                    <constraint firstItem="mtv-mM-yBl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="BUl-xG-M5A"/>
+                    <constraint firstItem="Nsb-8H-ZHk" firstAttribute="leading" secondItem="mtv-mM-yBl" secondAttribute="trailing" constant="8" symbolic="YES" id="PTG-zV-Ic6"/>
+                    <constraint firstItem="mtv-mM-yBl" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="xO7-8p-61X"/>
+                </constraints>
             </view>
-            <point key="canvasLocation" x="327" y="240"/>
+            <point key="canvasLocation" x="327" y="91"/>
         </window>
     </objects>
 </document>
