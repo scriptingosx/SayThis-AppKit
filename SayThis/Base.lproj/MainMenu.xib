@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SayThis" customModuleProvider="target">
             <connections>
+                <outlet property="sayProgress" destination="Cbx-pr-Snx" id="YSX-pi-X9h"/>
                 <outlet property="sayThisTextField" destination="mtv-mM-yBl" id="AaK-XD-cis"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -679,7 +680,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-8H-ZHk">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-8H-ZHk">
                         <rect key="frame" x="401" y="14" width="65" height="32"/>
                         <buttonCell key="cell" type="push" title="Talk" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KJL-5u-ZSS">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -697,15 +698,21 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Cbx-pr-Snx">
+                        <rect key="frame" x="383" y="23" width="16" height="16"/>
+                    </progressIndicator>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Nsb-8H-ZHk" secondAttribute="trailing" constant="20" symbolic="YES" id="8kS-IC-fn2"/>
+                    <constraint firstItem="Nsb-8H-ZHk" firstAttribute="leading" secondItem="Cbx-pr-Snx" secondAttribute="trailing" constant="8" symbolic="YES" id="A9e-a4-8dn"/>
                     <constraint firstItem="mtv-mM-yBl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="BUl-xG-M5A"/>
+                    <constraint firstItem="Cbx-pr-Snx" firstAttribute="centerY" secondItem="mtv-mM-yBl" secondAttribute="centerY" id="DEj-TA-hDS"/>
+                    <constraint firstItem="Cbx-pr-Snx" firstAttribute="centerY" secondItem="Nsb-8H-ZHk" secondAttribute="centerY" id="Hr7-4t-xcf"/>
                     <constraint firstItem="Nsb-8H-ZHk" firstAttribute="leading" secondItem="mtv-mM-yBl" secondAttribute="trailing" constant="8" symbolic="YES" id="PTG-zV-Ic6"/>
                     <constraint firstItem="mtv-mM-yBl" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="xO7-8p-61X"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="327" y="91"/>
+            <point key="canvasLocation" x="310" y="-14"/>
         </window>
     </objects>
 </document>

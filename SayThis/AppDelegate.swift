@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var sayThisTextField: NSTextField!
+    @IBOutlet weak var sayProgress: NSProgressIndicator!
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -29,11 +30,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let arguments = [textToSay]
         
         sender.enabled = false
+        sayProgress.startAnimation(self)
         
         let task = NSTask.launchedTaskWithLaunchPath(path, arguments: arguments)
         task.waitUntilExit()
         
         sender.enabled = true
+        sayProgress.stopAnimation(self)
     }
 
 }
