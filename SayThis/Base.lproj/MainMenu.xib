@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="sayProgress" destination="Cbx-pr-Snx" id="YSX-pi-X9h"/>
                 <outlet property="sayThisTextField" destination="mtv-mM-yBl" id="AaK-XD-cis"/>
+                <outlet property="voicePopup" destination="gjk-Tl-Shj" id="YJ0-Cb-Wff"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -672,26 +673,29 @@
         <window title="SayThis" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="120" y="820" width="480" height="62"/>
+            <rect key="contentRect" x="120" y="820" width="480" height="91"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <value key="minSize" type="size" width="240" height="62"/>
-            <value key="maxSize" type="size" width="1000" height="62"/>
+            <value key="minSize" type="size" width="240" height="91"/>
+            <value key="maxSize" type="size" width="1000" height="91"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="62"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="91"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-8H-ZHk">
-                        <rect key="frame" x="401" y="14" width="65" height="32"/>
+                        <rect key="frame" x="401" y="43" width="65" height="32"/>
                         <buttonCell key="cell" type="push" title="Talk" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KJL-5u-ZSS">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="talk:" target="Voe-Tx-rLC" id="u2f-U0-ODP"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mtv-mM-yBl">
-                        <rect key="frame" x="20" y="20" width="379" height="22"/>
+                        <rect key="frame" x="20" y="49" width="379" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="icP-ZM-ghg">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -699,20 +703,50 @@
                         </textFieldCell>
                     </textField>
                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Cbx-pr-Snx">
-                        <rect key="frame" x="383" y="23" width="16" height="16"/>
+                        <rect key="frame" x="383" y="52" width="16" height="16"/>
                     </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UHC-e0-asy">
+                        <rect key="frame" x="18" y="23" width="42" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Voice:" id="7eE-gh-hQz">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gjk-Tl-Shj">
+                        <rect key="frame" x="64" y="17" width="78" height="26"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Cl0-Bh-JLI">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="Zav-y2-nkn">
+                                <items>
+                                    <menuItem title="Alex" id="Jtd-KP-2Cd"/>
+                                    <menuItem title="Allison" id="Uf4-Lo-ahq"/>
+                                    <menuItem title="Karen" id="7mH-im-cUs"/>
+                                    <menuItem title="Fiona" id="Cdq-rK-2Gl">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Nsb-8H-ZHk" secondAttribute="trailing" constant="20" symbolic="YES" id="8kS-IC-fn2"/>
                     <constraint firstItem="Nsb-8H-ZHk" firstAttribute="leading" secondItem="Cbx-pr-Snx" secondAttribute="trailing" constant="8" symbolic="YES" id="A9e-a4-8dn"/>
                     <constraint firstItem="mtv-mM-yBl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="BUl-xG-M5A"/>
                     <constraint firstItem="Cbx-pr-Snx" firstAttribute="centerY" secondItem="mtv-mM-yBl" secondAttribute="centerY" id="DEj-TA-hDS"/>
+                    <constraint firstItem="UHC-e0-asy" firstAttribute="leading" secondItem="mtv-mM-yBl" secondAttribute="leading" id="FC6-si-BbR"/>
                     <constraint firstItem="Cbx-pr-Snx" firstAttribute="centerY" secondItem="Nsb-8H-ZHk" secondAttribute="centerY" id="Hr7-4t-xcf"/>
+                    <constraint firstItem="gjk-Tl-Shj" firstAttribute="leading" secondItem="UHC-e0-asy" secondAttribute="trailing" constant="8" symbolic="YES" id="MVd-0c-mpC"/>
                     <constraint firstItem="Nsb-8H-ZHk" firstAttribute="leading" secondItem="mtv-mM-yBl" secondAttribute="trailing" constant="8" symbolic="YES" id="PTG-zV-Ic6"/>
+                    <constraint firstItem="UHC-e0-asy" firstAttribute="baseline" secondItem="gjk-Tl-Shj" secondAttribute="baseline" id="mgo-Ze-UnV"/>
+                    <constraint firstAttribute="bottom" secondItem="gjk-Tl-Shj" secondAttribute="bottom" constant="20" id="trF-Bq-NSo"/>
                     <constraint firstItem="mtv-mM-yBl" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="xO7-8p-61X"/>
+                    <constraint firstItem="gjk-Tl-Shj" firstAttribute="top" secondItem="mtv-mM-yBl" secondAttribute="bottom" constant="8" id="zpa-mL-VZb"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="310" y="-14"/>
+            <point key="canvasLocation" x="310" y="0.5"/>
         </window>
     </objects>
 </document>

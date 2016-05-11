@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var sayThisTextField: NSTextField!
     @IBOutlet weak var sayProgress: NSProgressIndicator!
+    @IBOutlet weak var voicePopup: NSPopUpButton!
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -27,7 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func talk(sender: NSButton) {
         let path = "/usr/bin/say"
         let textToSay = sayThisTextField.stringValue
-        let arguments = [textToSay]
+
+        var arguments = [textToSay]
+        
+        if let voice = voicePopup.titleOfSelectedItem {
+            arguments += ["-v", voice]
+        }
         
         sender.enabled = false
         sayProgress.startAnimation(self)
