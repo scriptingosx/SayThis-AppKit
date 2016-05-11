@@ -729,6 +729,9 @@ DQ
                                 </items>
                             </menu>
                         </popUpButtonCell>
+                        <connections>
+                            <binding destination="gWI-yt-DZx" name="selectedValue" keyPath="values.voice" id="wnk-oz-Kdr"/>
+                        </connections>
                     </popUpButton>
                 </subviews>
                 <constraints>
@@ -748,5 +751,6 @@ DQ
             </view>
             <point key="canvasLocation" x="310" y="0.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="gWI-yt-DZx"/>
     </objects>
 </document>
