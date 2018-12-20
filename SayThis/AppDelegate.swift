@@ -17,15 +17,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var voicePopup: NSPopUpButton!
 
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-    @IBAction func talk(sender: NSButton) {
+    @IBAction func talk(_ sender: NSButton) {
         let path = "/usr/bin/say"
         let textToSay = sayThisTextField.stringValue
 
@@ -35,13 +35,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             arguments += ["-v", voice]
         }
         
-        sender.enabled = false
+        sender.isEnabled = false
         sayProgress.startAnimation(self)
         
-        let task = NSTask.launchedTaskWithLaunchPath(path, arguments: arguments)
+        let task = Process.launchedProcess(launchPath: path, arguments: arguments)
         task.waitUntilExit()
         
-        sender.enabled = true
+        sender.isEnabled = true
         sayProgress.stopAnimation(self)
     }
 
